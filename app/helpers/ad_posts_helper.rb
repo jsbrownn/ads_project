@@ -1,0 +1,2 @@
+module AdPostsHelper
+end

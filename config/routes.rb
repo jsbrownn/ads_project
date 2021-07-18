@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-root 'pages#index'
+  resources :ad_posts
+root 'ad_posts#index'
 end
