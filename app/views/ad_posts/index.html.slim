@@ -1,0 +1,18 @@
+p#notice= notice
+h1 Ad Posts
+
+table
+  thead
+    tr
+      th Title
+      th Description
+  tbody
+    - @ad_posts.each do |ad_post|
+      tr
+        td= ad_post.title
+        td= ad_post.description
+        td= link_to 'Show', ad_post
+        td= link_to 'Edit', edit_ad_post_path(ad_post)
+        td= link_to 'Destroy', ad_post, method: :delete
+        br/
+= link_to 'New Ad Post', new_ad_post_path

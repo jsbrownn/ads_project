@@ -1,0 +1,20 @@
+p#notice= notice
+p
+  strong Title:
+  = @ad_post.title
+p
+  strong Description:
+  = @ad_post.description
+p 
+  strong Tags:
+  - @tags.each do |tag|
+    strong
+      '  #
+      =tag.title
+      end
+
+
+
+= link_to 'Edit', edit_ad_post_path(@ad_post)
+| \
+= link_to 'Back', ad_posts_path

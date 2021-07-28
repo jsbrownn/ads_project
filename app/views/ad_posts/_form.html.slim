@@ -1,0 +1,36 @@
+= form_with(model: @ad_post) do |form|
+  - if @ad_post.errors.any?
+    #error_explanation
+      h2
+        = pluralize(ad_post.errors.count, "error")
+        | prohibited this ad_post from being saved:
+      ul
+        - ad_post.errors.each do |error|
+          li= error.full_message
+       
+
+  .field
+    = form.label :title
+    = form.text_field :title, required: true, placeholder: "Enter a title ad"
+  .field
+    = form.label :description
+    = form.text_field :description, required: true, minlength: 6, placeholder:"Enter a description ad"
+
+    
+
+  - @tags.each do |tag|
+     .field 
+         = form.label tag.title 
+         = form.check_box :tags, {multiple: true, checked: !!@ad_post.tags.include?(tag)}, tag.id, false 
+
+        
+    
+  .actions
+    = form.submit
+
+    
+      
+      
+
+  
+
