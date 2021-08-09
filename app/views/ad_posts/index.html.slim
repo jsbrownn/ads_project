@@ -2,16 +2,17 @@ p#notice= notice
 == pagy_bootstrap_nav(@pagy)
 .wrapper 
     -@ad_posts.each do |ad_post|
-      = link_to  ad_post ,:class => "ad_post--link" 
-        .ad_post__img_preview
-            -if ad_post[:images_filename].nil?
-                .empty
-                  span.empty_text No photo
-            -else 
-                = cl_image_tag(ad_post[:images_filename].first , :width => 100, :height => 100, :crop => :fill)
-            .ad_post__body
-                h2.post_title= ad_post.title
-                .post_description= ad_post.description
+      = link_to  ad_post ,:class => "ad_post-link" 
+        .ad_post
+          .ad_post__img_preview
+              -if ad_post[:images_filename].nil?
+                  .empty
+                    span.empty_text No photo
+              -else 
+                  = cl_image_tag(ad_post[:images_filename].first , :width => 100, :height => 100, :crop => :fill)
+          .ad_post__body
+            h2.post_title= ad_post.title
+            .post_description= ad_post.description
         
 
     
