@@ -2,8 +2,8 @@ p#notice= notice
 == pagy_bootstrap_nav(@pagy)
 .wrapper 
     -@ad_posts.each do |ad_post|
-        .ad_post
-            .ad_post__img_preview
+      = link_to  ad_post ,:class => "ad_post--link" 
+        .ad_post__img_preview
             -if ad_post[:images_filename].nil?
                 .empty
                   span.empty_text No photo
@@ -12,9 +12,10 @@ p#notice= notice
             .ad_post__body
                 h2.post_title= ad_post.title
                 .post_description= ad_post.description
+        
 
     
 = link_to 'New Ad Post', new_ad_post_path
 
 
-== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1
+== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 

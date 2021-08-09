@@ -16,6 +16,20 @@
     transform: scale(1.1);
     transition: .5s;
 }
+.ad_post--link{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: black;
+    :hover{
+      color: none;
+    }
+    :active{
+      color:black;
+    }
+  
+}
 
 .ad_post {
     display: flex;
@@ -24,6 +38,8 @@
     background-color: white;
 
 }
+
+
 
 .empty {
     width: 100px;
