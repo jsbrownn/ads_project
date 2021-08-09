@@ -1,5 +1,7 @@
 class TagsController < ApplicationController
-  before_action :set_tag, only: %i[ show edit update destroy ]
+  before_action :set_tag, only: %i[ show edit update destroy ] 
+  autocomplete :tag, :title
+  
 
   # GET /tags or /tags.json
   def index
@@ -12,8 +14,11 @@ class TagsController < ApplicationController
   end
 
   # GET /tags/new
-  def new
+  def new   
     @tag = Tag.new
+    
+
+   
   end
 
   # GET /tags/1/edit
@@ -23,9 +28,9 @@ class TagsController < ApplicationController
   # POST /tags or /tags.json
   def create
     @tag = Tag.new(tag_params)
-
+ 
     respond_to do |format|
-      if @tag.save
+      if @tag.save  
         format.html { redirect_to @tag, notice: "Tag was successfully created." }
         format.json { render :show, status: :created, location: @tag }
       else
@@ -65,6 +70,6 @@ class TagsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tag_params
-      params.require(:tag).permit(:title)
+      params.require(:tag).permit(:title,:tags)
     end
 end

@@ -1,3 +1,43 @@
 // Place all the styles related to the AdPosts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.preview_image{
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+    border-radius: 5px;
+    filter: grayscale(40%);
+
+}
+
+.active_image{    
+    border-radius: 5px;
+    border: 3px solid orange;
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+.ad_post {
+    display: flex;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    background-color: white;
+
+}
+
+.empty {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    text-align: center;
+}
+
+.empty_text{
+  color: white;
+}
+
+
+
+.ad_post__body{
+  margin-left: 30px;
+}

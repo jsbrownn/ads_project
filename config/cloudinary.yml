@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: twinslash
+  api_key: '434279266524551'
+  api_secret: n2HaqssIwlDs8doEbG3Fbl_YynA
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: twinslash
+  api_key: '434279266524551'
+  api_secret: n2HaqssIwlDs8doEbG3Fbl_YynA
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: twinslash
+  api_key: '434279266524551'
+  api_secret: n2HaqssIwlDs8doEbG3Fbl_YynA
+  enhance_image_tag: true
+  static_file_support: false

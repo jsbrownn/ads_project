@@ -7,30 +7,35 @@
       ul
         - ad_post.errors.each do |error|
           li= error.full_message
-       
 
   .field
     = form.label :title
+  .field
     = form.text_field :title, required: true, placeholder: "Enter a title ad"
   .field
     = form.label :description
+  .field
     = form.text_field :description, required: true, minlength: 6, placeholder:"Enter a description ad"
 
+  / - @tags.each do |tag|
+  /   .field 
+  /     = form.label tag.title 
+  /     = form.check_box :tags, {multiple: true, checked: }, tag.id, false //
     
+  .field 
+    = form.autocomplete_field :tags, autocomplete_tag_title_tags_path, 'data-delimiter' => ',', :value => !!@ad_post.tags.include?(tag)
 
-  - @tags.each do |tag|
-     .field 
-         = form.label tag.title 
-         = form.check_box :tags, {multiple: true, checked: !!@ad_post.tags.include?(tag)}, tag.id, false 
 
-        
-    
+  .field 
+    = form.file_field  :images, {id:"form_img", multiple: true, direct_uploads: true}
+
+  .images__wrap
+      -if @ad_post.images_filename?
+          - @ad_post.images_filename.each  do |image|
+            = cl_image_tag( image , :width => 100, :height => 100, :crop => :fill, class: "preview_image")
+      
   .actions
     = form.submit
-
-    
-      
-      
-
   
-
+    
+= javascript_include_tag 'preview'

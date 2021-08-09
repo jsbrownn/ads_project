@@ -20,11 +20,18 @@ gem 'jbuilder', '~> 2.7'
 gem "slim-rails"
 gem 'pry'
 gem 'rubocop', '~> 1.18', require: false
+gem 'cloudinary'
+gem 'carrierwave', '~> 2.0'
+gem 'rails-jquery-autocomplete', '~> 1.0', '>= 1.0.5'
+gem 'nifty-generators'
+gem 'jquery-rails', '~> 4.4'
+gem 'bootstrap', '~> 5.0.1'
+gem 'pagy', '~> 3.5'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+ gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

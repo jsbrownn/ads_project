@@ -12,7 +12,11 @@ p
       '  #
       =tag.title
       end
-
+p 
+  strong Images: 
+    - @ad_post.images_filename.each  do |image|
+        = cl_image_tag( image , :width => 100, :height => 100, :crop => :fill)
+     end
 
 
 = link_to 'Edit', edit_ad_post_path(@ad_post)
